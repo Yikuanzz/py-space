@@ -63,5 +63,5 @@ if __name__ == "__main__":
     #     time.sleep(2)
     #     sum(i for i in range(1000000))
 
-    # with suppress_exception(ValueError):
-    #     print(10 / 0)
+    with suppress_exception(ValueError):
+        print(10 / 0)
