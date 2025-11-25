@@ -177,3 +177,13 @@ age: int = 25
 
 print(greet("John"))
 ```
+
+## 第九课：函数式编程工具（functools,itertools,operator）
+
+用函数式编程工具的场景：
+
+- 1、排序/查找复杂对象：`operator.attrgetter`、`itemgetter`
+- 2、生成组合、排列、笛卡尔积：`itertools`
+- 3、缓存昂贵计算：`@lru_cache`
+- 4、固定函数参数 `partial`
+- 5、替代简单循环：`map`、`filter`、`itertools`
