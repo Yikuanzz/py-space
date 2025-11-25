@@ -187,3 +187,7 @@ print(greet("John"))
 - 3、缓存昂贵计算：`@lru_cache`
 - 4、固定函数参数 `partial`
 - 5、替代简单循环：`map`、`filter`、`itertools`
+
+## 第十课：魔法方法（Dunder Methods）深入
+
+ 魔法方法是 Python 提供的特殊方法名，它们以双下划线开头和结尾（如 `__init__`）。虽然可以直接调用它们，但通常由解释器在特定情况下自动调用。
