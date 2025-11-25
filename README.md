@@ -115,3 +115,30 @@ class ReadOnlyDescriptor:
 class MyClass:
     x = ReadOnlyDescriptor(42)
 ```
+
+## 第六课：元类（Metaclass）基础
+
+元类是创建类的“类”。换句话说，类本身也是对象，而这些对象由元类创建，默认情况下，Python 用 `type` 作为所有类的元类。
+
+一般情况下，以下情况考虑用元类：
+
+- 自动化代码生成：比如自动注册。
+- 跨多个类共享行为：比如很多类都需要执行相同类型的设置或检查。
+- 框架开发：比如 Django ORM 用元类来处理模型。
+
+```python
+class MyMeta(type):
+    def __new__(cls, name, bases, dct):
+        ''' __new__ 是再类创建时调用 '''
+        print(f"Creating class: {name}")
+        # 执行逻辑 ...
+        return super().__new__(cls, name, bases, dct)
+
+    def __init__(cls, name, bases, dct):
+        ''' __init__ 是在类初始化的时候调用 '''
+        print(f"Initializing class: {name}")
+        super().__init__(name, bases, dct)
+
+class MyClass(metaclass=MyMeta):
+    pass
+```
