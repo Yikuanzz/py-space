@@ -164,3 +164,16 @@ async def main():
         task("Task 3", 3),
     )
 ```
+
+## 第八课：类型提示进阶（Type Hints + Generics + Protocol）
+
+类型提示用来提升代码的可读性，并且可以帮助静态检查器进行类型检查。
+
+```python
+def greet(name: str) -> str:
+    return f"Hello, {name}!"
+
+age: int = 25
+
+print(greet("John"))
+```
