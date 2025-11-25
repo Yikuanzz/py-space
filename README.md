@@ -142,3 +142,25 @@ class MyMeta(type):
 class MyClass(metaclass=MyMeta):
     pass
 ```
+
+## 第七课：异步编程入门（async/await）
+
+异步编程允许编写非阻塞代码，尤其适合 IO 密集型操作。
+
+- 异步编程：适合 IO 密集型操作，要理解事件循环；
+- 多线程：适合 CPU 密集型和 IO 密集型，需要处理锁等同步机制；
+- 多进程：适合 CPU 密集型，需要考虑进程间通信。
+
+```python
+async def task(name, seconds):
+    print(f"Task {name} starting...")
+    await asyncio.sleep(seconds)
+    print(f"Task {name} finished.")
+
+async def main():
+    await asyncio.gather(
+        task("Task 1", 1),
+        task("Task 2", 2),
+        task("Task 3", 3),
+    )
+```
